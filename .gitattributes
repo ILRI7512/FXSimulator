@@ -1,0 +1,32 @@
+# 统一换行与文本判定，避免 Windows/Linux 交叉提交产生整文件 diff
+* text=auto eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# 明确文本类型
+*.kt   text diff=kotlin
+*.kts  text diff=kotlin
+*.md   text
+*.py   text
+*.gradle text
+*.pro   text
+*.xml  text
+*.json text
+*.yml  text
+*.yaml text
+*.toml text
+*.csv  text
+
+# 明确二进制（禁止任何转换与文本 diff）
+*.glb1  binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.webp  binary
+*.jar   binary
+*.jks   binary
+*.keystore binary
+*.apk   binary
+*.aab   binary
+*.docx  binary
+*.xlsx  binary

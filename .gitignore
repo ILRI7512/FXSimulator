@@ -1,0 +1,78 @@
+# ============================================================
+#  FX模拟器 / GoldLab —— 入库排除规则
+#  原则：代码与文档入库；密钥、构建产物、受限行情数据一律不入库。
+#  审计依据见 docs/PROJECT_AUDIT.md §2 与 §11。
+# ============================================================
+
+# ---- 签名密钥：绝不入库（这是整个项目里唯一不可逆的东西）----
+【私密】keystore/
+keystore/
+*.jks
+*.keystore
+keystore.properties
+signing.properties
+
+# ---- 本机配置 ----
+local.properties
+
+# ---- 构建产物 ----
+build/
+.gradle/
+.kotlin/
+captures/
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+
+# ---- 行情数据：来源许可未定，不入库（见 datasets/README.md）----
+# 原始 CSV
+market-data/
+历史数据/
+tools/*.csv
+tools/data_pipeline/out/
+tools/data_pipeline/raw/
+# 由 CSV 派生的 GLB1 内置资产（保留说明文件占位）
+app/src/main/assets/market/**
+!app/src/main/assets/market/README.md
+!app/src/main/assets/market/.gitkeep
+
+# ---- 本地运行产物 ----
+APk/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+goldlab.db
+logs/
+*.log
+
+# ---- 临时 / 调试产物 ----
+.tmp_*
+Screenshot_*.jpg
+Screenshot_*.png
+*.hprof
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.mypy_cache/
+.pytest_cache/
+
+# ---- Rust（第二阶段引擎）----
+target/
+**/target/
+Cargo.lock.bak
+
+# ---- 编辑器 / 操作系统 ----
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.iml
+*.swp
