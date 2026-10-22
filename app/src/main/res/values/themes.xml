@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 深色金融终端主题：Compose 自行绘制全部界面，此处仅提供窗口底色 -->
+    <style name="Theme.GoldLab" parent="@android:style/Theme.Material.NoActionBar">
+        <item name="android:windowBackground">#FF0B0E14</item>
+        <item name="android:statusBarColor">#FF0B0E14</item>
+        <item name="android:navigationBarColor">#FF0B0E14</item>
+    </style>
+</resources>
